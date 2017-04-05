@@ -1,4 +1,4 @@
-# [![PocketMine-MP](http://cdn.pocketmine.net/img/PocketMine-MP-h.png)](https://pmmp.io)
+# ![Tesseract](http://i.imgur.com/1ga0ATy.jpg)
 
 __A highly customisable, open source server software for Minecraft: Pocket Edition written in PHP__
 
@@ -9,8 +9,8 @@ Head over to the [documentation site](http://pmmp.readthedocs.org/).
 If you don't find what you're looking for there, [talk to a human](#discussion). Please do not use our issue tracker for support requests.
 
 ### Discussion
-- [Forums](https://forums.pmmp.io/)
-- [#pmmp + #pocketmine channel IRC](http://webchat.freenode.net/?channels=pmmp,pocketmine)
+- [Forums (unavalible)](#)
+- [#tesseract channel IRC](http://webchat.freenode.net/?channels=tesseract)
 
 ### Plugins
 There are a very wide range of already-written plugins available which you can use to customise your server. Check out the [old plugin repository](http://plugins.pocketmine.net/), [Poggit](https://poggit.pmmp.io) or just search GitHub.
@@ -23,7 +23,7 @@ There are a very wide range of already-written plugins available which you can u
 Yes you can! Contributions are welcomed provided that they comply with our [Contributing Guidelines](CONTRIBUTING.md). Please ensure you read the relevant sections of the guidelines carefully before making a Pull Request or opening an Issue.
 
 ### Where can I get the latest .phar?
-Head over to our [official Jenkins server](https://jenkins.pmmp.io/)
+Currently we are working on this, please build it will DevTools until we get a solution!
 
 ## Third-party Libraries/Protocols Used
 * __[PHP Sockets](http://php.net/manual/en/book.sockets.php)__
