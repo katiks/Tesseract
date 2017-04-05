@@ -1,43 +1,65 @@
-# ![Tesseract](http://i.imgur.com/1ga0ATy.jpg)
+![Tesseract](http://i.imgur.com/1ga0ATy.jpg)
+Tesseract Introduction
+-------------
+**Tesseract is the advanced server software based on PocketMine-MP and Genisys! <br>
+Tesseract supports only the world type of Anvil or PMAnvil. (MCRegion support is [deprecated](https://www.google.com/search?q=deprecated&oq=deprecated&aqs=chrome.0.69i59j69i61.1457j0j7&sourceid=chrome&ie=UTF-8)) <br>
+Tesseract supports packet and event debug system (for plugin developers)**
 
-__A highly customisable, open source server software for Minecraft: Pocket Edition written in PHP__
+## Notice
 
-[![Build Status](https://travis-ci.org/pmmp/PocketMine-MP.svg?branch=master)](https://travis-ci.org/pmmp/PocketMine-MP)
+**Tesseract is supported to Minecraft:PE 1.0.3 (PE & Win10) <br>
+Report any issues and we will try to fix them for you.** 
 
-### Setup, help & support, FAQs
-Head over to the [documentation site](http://pmmp.readthedocs.org/).
-If you don't find what you're looking for there, [talk to a human](#discussion). Please do not use our issue tracker for support requests.
+##Builds
 
-### Discussion
-- [Forums (unavalible)](#)
-- [#tesseract channel IRC](http://webchat.freenode.net/?channels=tesseract)
+__Travis-CI Build:__<br>
+ [![Travis-CI](https://travis-ci.org/TesseractTeam/Tesseract.svg?branch=master)](https://travis-ci.org/TesseractTeam/Tesseract)<br>
+ __Jenkins Build:__<br>
+[![Jenkins](https://travis-ci.org/TesseractTeam/Tesseract.svg?branch=master)](http://jenkins.tesseractteam.tk:8080/job/Tesseract)
 
-### Plugins
-There are a very wide range of already-written plugins available which you can use to customise your server. Check out the [old plugin repository](http://plugins.pocketmine.net/), [Poggit](https://poggit.pmmp.io) or just search GitHub.
+## Project List
+You can check the progress of the project.
+__[Project List!](https://github.com/TesseractTeam/Tesseract/projects/1)__
 
-### For developers
- * [Latest API documentation](https://jenkins.pmmp.io/job/PocketMine-MP-doc/doxygen/) - Doxygen documentation generated from development
- * [DevTools](https://github.com/pmmp/PocketMine-DevTools/) - A development tools plugin for creating plugins.
+## Quick Links (Instead of scrolling, click these!)
 
-### Can I contribute?
-Yes you can! Contributions are welcomed provided that they comply with our [Contributing Guidelines](CONTRIBUTING.md). Please ensure you read the relevant sections of the guidelines carefully before making a Pull Request or opening an Issue.
+__[Installation](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#installation)__ <br>
+__[Resources](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#resources)__ <br>
+__[Acknowledgements](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#acknowledgements)__ <br>
+__[License](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#license)__ <br>
+__[TODO LIST!](https://github.com/TesseractTeam/Tesseract/projects/1)__ <br>
+__[Third Party Libraries and Protocols Used](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#ThirdpartyLibrariesProtocolsUsed)__ <br>
 
-### Where can I get the latest .phar?
-Currently we are working on this, please build it will DevTools until we get a solution!
+## Installation
 
-## Third-party Libraries/Protocols Used
-* __[PHP Sockets](http://php.net/manual/en/book.sockets.php)__
-* __[PHP mbstring](http://php.net/manual/en/book.mbstring.php)__
-* __[PHP BCMath](http://php.net/manual/en/book.bc.php)__
-* __[PHP pthreads](http://pthreads.org/)__ by _[krakjoe](https://github.com/krakjoe)_: Threading for PHP - Share Nothing, Do Everything.
-* __[PHP YAML](https://code.google.com/p/php-yaml/)__ by _Bryan Davis_: The Yaml PHP Extension provides a wrapper to the LibYAML library.
-* __[LibYAML](http://pyyaml.org/wiki/LibYAML)__ by _Kirill Simonov_: A YAML 1.1 parser and emitter written in C.
-* __[cURL](http://curl.haxx.se/)__: cURL is a command line tool for transferring data with URL syntax
-* __[Zlib](http://www.zlib.net/)__: A Massively Spiffy Yet Delicately Unobtrusive Compression Library
-* __[Source RCON Protocol](https://developer.valvesoftware.com/wiki/Source_RCON_Protocol)__
-* __[UT3 Query Protocol](http://wiki.unrealadmin.org/UT3_query_protocol)__
+**Self-installation:**<br>
+Supported platforms: Linux, Windows, OS X, Raspberry Pi, and ODROID <br>
+[Installation](https://github.com/TesseractTeam/Tesseract/wiki/Installation)<br>
 
-## Licensing information
+__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
+<br>
+
+## Resources
+
+**External Links**<br>
+Your Tesseract Server needs Visual Studio C++ Redistributable 2015 (If you are on windows). <br>
+It can be downloaded
+__[here](https://www.microsoft.com/en-us/download/details.aspx?id=48145)__ <br>
+
+__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
+<br>
+
+
+## Acknowledgements
+
+- Tesseract is a "spoon" of **[Genisys](https://github.com/iTXTech/Genisys)** 
+- Tesseract is also a "spoon" of **[Pocketmine-MP](http://github.com/pmmp/PocketMine-MP/)** 
+- Most of the original code was written by PocketMine Team and iTX Technologies. <br>
+
+__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__<br>
+
+## License
+-------------
 
 	This program is free software: you can redistribute it and/or modify
 	it under the terms of the GNU Lesser General Public License as published by
@@ -52,4 +74,22 @@ Currently we are working on this, please build it will DevTools until we get a s
 	You should have received a copy of the GNU Lesser General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
-TesseractMC/Tesseract are not affiliated with Mojang. All brands and trademarks belong to their respective owners. PocketMine-MP is not a Mojang-approved software, nor is it associated with Mojang.
+__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
+<br>
+
+## Third-party Libraries/Protocols Used
+-------------
+* __[PHP Sockets](http://php.net/manual/en/book.sockets.php)__
+* __[PHP mbstring](http://php.net/manual/en/book.mbstring.php)__
+* __[PHP SQLite3](http://php.net/manual/en/book.sqlite3.php)__
+* __[PHP BCMath](http://php.net/manual/en/book.bc.php)__
+* __[PHP pthreads](http://pthreads.org/)__ by _[krakjoe](https://github.com/krakjoe)_: Threading for PHP - Share Nothing, Do Everything.
+* __[PHP YAML](https://code.google.com/p/php-yaml/)__ by _Bryan Davis_: The Yaml PHP Extension provides a wrapper to the LibYAML library.
+* __[LibYAML](http://pyyaml.org/wiki/LibYAML)__ by _Kirill Simonov_: A YAML 1.1 parser and emitter written in C.
+* __[cURL](http://curl.haxx.se/)__: cURL is a command line tool for transferring data with URL syntax
+* __[Zlib](http://www.zlib.net/)__: A Massively Spiffy Yet Delicately Unobtrusive Compression Library
+* __[Source RCON Protocol](https://developer.valvesoftware.com/wiki/Source_RCON_Protocol)__
+* __[UT3 Query Protocol](http://wiki.unrealadmin.org/UT3_query_protocol)__
+
+__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
+<br>
