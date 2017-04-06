@@ -10,8 +10,7 @@ Tesseract supports packet and event debug system (for plugin developers)**
 Report any issues and we will try to fix them for you.** 
 
 ## Builds
-Unavailable due to original project discontinuation. Coming Soon!
-
+[Build Status](https://circleci.com/gh/circleci/mongofinil.svg?&style=shield&circle-token=d2743a622dc0d1a48ea56ff0e38b047d25278a6b/)
 ## Quick Links (Instead of scrolling, click these!)
 
 __[Installation](https://github.com/TesseractMC/Tesseract)__ <br>
