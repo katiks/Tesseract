@@ -25,6 +25,7 @@ namespace pocketmine\network\protocol;
 
 
 class MovePlayerPacket extends DataPacket{
+
 	const NETWORK_ID = Info::MOVE_PLAYER_PACKET;
 
 	const MODE_NORMAL = 0;
@@ -47,34 +48,31 @@ class MovePlayerPacket extends DataPacket{
 	}
 
 	public function decode(){
-		$this->eid = $this->getVarInt();
-		
-		$this->x = $this->getLFloat();
-		$this->y = $this->getLFloat();
-		$this->z = $this->getLFloat();
-		
+		$this->eid = $this->getEntityId(); //EntityRuntimeID
+		$this->getVector3f($this->x, $this->y, $this->z);
 		$this->pitch = $this->getLFloat();
 		$this->yaw = $this->getLFloat();
-		
 		$this->bodyYaw = $this->getLFloat();
 		$this->mode = $this->getByte();
-		$this->onGround = $this->getByte() > 0;
+		$this->onGround = $this->getBool();
 	}
 
 	public function encode(){
 		$this->reset();
-		$this->putVarInt($this->eid);
-		
-		$this->putLFloat($this->x);
-		$this->putLFloat($this->y);
-		$this->putLFloat($this->z);
-		
+		$this->putEntityId($this->eid); //EntityRuntimeID
+		$this->putVector3f($this->x, $this->y, $this->z);
 		$this->putLFloat($this->pitch);
 		$this->putLFloat($this->yaw);
-		
-		$this->putLFloat($this->bodyYaw);
+		$this->putLFloat($this->bodyYaw); //TODO
 		$this->putByte($this->mode);
-		$this->putByte($this->onGround > 0);
+		$this->putBool($this->onGround);
+	}
+
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "MovePlayerPacket";
 	}
 
 }

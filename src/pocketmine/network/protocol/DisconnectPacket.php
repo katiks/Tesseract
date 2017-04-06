@@ -24,22 +24,29 @@ namespace pocketmine\network\protocol;
 #include <rules/DataPacket.h>
 
 
-class DisconnectPacket extends DataPacket {
-	
+class DisconnectPacket extends DataPacket{
+
 	const NETWORK_ID = Info::DISCONNECT_PACKET;
 
-	public $hideDisconnectReason = false;
+	public $hideDisconnectionScreen = false;
 	public $message;
 
-	public function decode() {
-		$this->hideDisconnectReason = $this->getByte();
+	public function decode(){
+		$this->hideDisconnectionScreen = $this->getBool();
 		$this->message = $this->getString();
 	}
 
-	public function encode() {
+	public function encode(){
 		$this->reset();
-		$this->putByte($this->hideDisconnectReason);
+		$this->putBool($this->hideDisconnectionScreen);
 		$this->putString($this->message);
+	}
+
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "DisconnectPacket";
 	}
 
 }

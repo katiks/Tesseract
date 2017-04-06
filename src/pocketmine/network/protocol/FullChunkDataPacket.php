@@ -25,14 +25,11 @@ namespace pocketmine\network\protocol;
 
 
 class FullChunkDataPacket extends DataPacket{
+
 	const NETWORK_ID = Info::FULL_CHUNK_DATA_PACKET;
-	
-	const ORDER_COLUMNS = 0;
-	const ORDER_LAYERED = 1;
 
 	public $chunkX;
 	public $chunkZ;
-	public $order = self::ORDER_COLUMNS;
 	public $data;
 
 	public function decode(){
@@ -41,10 +38,16 @@ class FullChunkDataPacket extends DataPacket{
 
 	public function encode(){
 		$this->reset();
-		$this->putSignedVarInt($this->chunkX);
-		$this->putSignedVarInt($this->chunkZ);
-//		$this->putByte($this->order);
+		$this->putVarInt($this->chunkX);
+		$this->putVarInt($this->chunkZ);
 		$this->putString($this->data);
+	}
+
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "FullChunkDataPacket";
 	}
 
 }

@@ -25,6 +25,7 @@ namespace pocketmine\network\protocol;
 
 
 class HurtArmorPacket extends DataPacket{
+
 	const NETWORK_ID = Info::HURT_ARMOR_PACKET;
 
 	public $health;
@@ -35,7 +36,14 @@ class HurtArmorPacket extends DataPacket{
 
 	public function encode(){
 		$this->reset();
-		$this->putSignedVarInt($this->health);
+		$this->putVarInt($this->health);
+	}
+
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "HurtArmorPacket";
 	}
 
 }

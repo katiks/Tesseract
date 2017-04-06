@@ -21,14 +21,8 @@
 
 namespace pocketmine\network\protocol;
 
-#include <rules/DataPacket.h>
-
-#ifndef COMPILE
-use pocketmine\utils\Binary;
-
-#endif
-
 class AddPlayerPacket extends DataPacket{
+
 	const NETWORK_ID = Info::ADD_PLAYER_PACKET;
 
 	public $uuid;
@@ -41,9 +35,10 @@ class AddPlayerPacket extends DataPacket{
 	public $speedY;
 	public $speedZ;
 	public $pitch;
+	public $headYaw;
 	public $yaw;
 	public $item;
-	public $metadata;
+	public $metadata = [];
 
 	public function decode(){
 
@@ -53,22 +48,22 @@ class AddPlayerPacket extends DataPacket{
 		$this->reset();
 		$this->putUUID($this->uuid);
 		$this->putString($this->username);
-		$this->putVarInt($this->eid);
-		$this->putVarInt($this->eid);
-		$this->putLFloat($this->x);
-		$this->putLFloat($this->y);
-		$this->putLFloat($this->z);
-		$this->putLFloat($this->speedX);
-		$this->putLFloat($this->speedY);
-		$this->putLFloat($this->speedZ);
+		$this->putEntityId($this->eid); //EntityUniqueID
+		$this->putEntityId($this->eid); //EntityRuntimeID
+		$this->putVector3f($this->x, $this->y, $this->z);
+		$this->putVector3f($this->speedX, $this->speedY, $this->speedZ);
 		$this->putLFloat($this->pitch);
+		$this->putLFloat($this->headYaw ?? $this->yaw);
 		$this->putLFloat($this->yaw);
-		$this->putLFloat($this->yaw);//TODO headrot	
-		$this->putSignedVarInt(0);
-//		$this->putSlot($this->item);
+		$this->putSlot($this->item);
+		$this->putEntityMetadata($this->metadata);
+	}
 
-		$meta = Binary::writeMetadata($this->metadata);
-		$this->put($meta);
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "AddPlayerPacket";
 	}
 
 }

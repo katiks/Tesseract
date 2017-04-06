@@ -25,15 +25,15 @@ namespace pocketmine\network\protocol;
 
 
 class ContainerSetContentPacket extends DataPacket{
+
 	const NETWORK_ID = Info::CONTAINER_SET_CONTENT_PACKET;
 
 	const SPECIAL_INVENTORY = 0;
-    const SPECIAL_OFF_HAND = 0x77; // 327702008c0480010000000000 - set arrow x64 in off-hand
 	const SPECIAL_ARMOR = 0x78;
 	const SPECIAL_CREATIVE = 0x79;
+	const SPECIAL_HOTBAR = 0x7a;
 
 	public $windowid;
-    public $entityId = 0;
 	public $slots = [];
 	public $hotbar = [];
 
@@ -44,14 +44,13 @@ class ContainerSetContentPacket extends DataPacket{
 	}
 
 	public function decode(){
-		$this->windowid = $this->getVarInt();
-        $this->entityId = $this->getVarInt();
-		$count = $this->getVarInt();
+		$this->windowid = $this->getByte();
+		$count = $this->getUnsignedVarInt();
 		for($s = 0; $s < $count and !$this->feof(); ++$s){
 			$this->slots[$s] = $this->getSlot();
 		}
 		if($this->windowid === self::SPECIAL_INVENTORY){
-			$count = $this->getVarInt();
+			$count = $this->getUnsignedVarInt();
 			for($s = 0; $s < $count and !$this->feof(); ++$s){
 				$this->hotbar[$s] = $this->getVarInt();
 			}
@@ -60,20 +59,26 @@ class ContainerSetContentPacket extends DataPacket{
 
 	public function encode(){
 		$this->reset();
-		$this->putVarInt($this->windowid);
-        $this->putVarInt(0);
-		$this->putVarInt(count($this->slots));
+		$this->putByte($this->windowid);
+		$this->putUnsignedVarInt(count($this->slots));
 		foreach($this->slots as $slot){
 			$this->putSlot($slot);
 		}
 		if($this->windowid === self::SPECIAL_INVENTORY and count($this->hotbar) > 0){
-			$this->putVarInt(count($this->hotbar));
+			$this->putUnsignedVarInt(count($this->hotbar));
 			foreach($this->hotbar as $slot){
-				$this->putSignedVarInt($slot);
+				$this->putVarInt($slot);
 			}
 		}else{
-			$this->putVarInt(0);
+			$this->putUnsignedVarInt(0);
 		}
+	}
+
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "ContainerSetContentPacket";
 	}
 
 }

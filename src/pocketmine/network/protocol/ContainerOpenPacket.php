@@ -25,15 +25,16 @@ namespace pocketmine\network\protocol;
 
 
 class ContainerOpenPacket extends DataPacket{
+
 	const NETWORK_ID = Info::CONTAINER_OPEN_PACKET;
 
-	public $entityId;
 	public $windowid;
 	public $type;
 	public $slots;
 	public $x;
 	public $y;
 	public $z;
+	public $entityId = -1;
 
 	public function decode(){
 
@@ -43,11 +44,16 @@ class ContainerOpenPacket extends DataPacket{
 		$this->reset();
 		$this->putByte($this->windowid);
 		$this->putByte($this->type);
-		$this->putSignedVarInt($this->slots);
-		$this->putSignedVarInt($this->x);
-		$this->putByte($this->y);
-		$this->putSignedVarInt($this->z);
-		$this->putSignedVarInt(-1);
+		$this->putVarInt($this->slots);
+		$this->putBlockCoords($this->x, $this->y, $this->z);
+		$this->putEntityId($this->entityId);
+	}
+
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "ContainerOpenPacket";
 	}
 
 }

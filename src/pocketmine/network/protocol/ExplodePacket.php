@@ -25,6 +25,7 @@ namespace pocketmine\network\protocol;
 
 
 class ExplodePacket extends DataPacket{
+
 	const NETWORK_ID = Info::EXPLODE_PACKET;
 
 	public $x;
@@ -44,18 +45,21 @@ class ExplodePacket extends DataPacket{
 
 	public function encode(){
 		$this->reset();
-		$this->putLFloat($this->x);
-		$this->putLFloat($this->y);
-		$this->putLFloat($this->z);
+		$this->putVector3f($this->x, $this->y, $this->z);
 		$this->putLFloat($this->radius);
-		$this->putVarInt(count($this->records));
+		$this->putUnsignedVarInt(count($this->records));
 		if(count($this->records) > 0){
 			foreach($this->records as $record){
-				$this->putSignedVarInt($record->x);
-				$this->putByte($record->y);
-				$this->putSignedVarInt($record->z);
+				$this->putBlockCoords($record->x, $record->y, $record->z);
 			}
 		}
+	}
+
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "ExplodePacket";
 	}
 
 }

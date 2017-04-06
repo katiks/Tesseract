@@ -25,15 +25,14 @@ namespace pocketmine\network\protocol;
 
 
 class MobArmorEquipmentPacket extends DataPacket{
+
 	const NETWORK_ID = Info::MOB_ARMOR_EQUIPMENT_PACKET;
 
 	public $eid;
 	public $slots = [];
 
 	public function decode(){
-//        var_dump(bin2hex($this->buffer));
-        
-		$this->eid = $this->getVarInt();
+		$this->eid = $this->getEntityId();
 		$this->slots[0] = $this->getSlot();
 		$this->slots[1] = $this->getSlot();
 		$this->slots[2] = $this->getSlot();
@@ -42,11 +41,18 @@ class MobArmorEquipmentPacket extends DataPacket{
 
 	public function encode(){
 		$this->reset();
-		$this->putVarInt($this->eid);
+		$this->putEntityId($this->eid);
 		$this->putSlot($this->slots[0]);
 		$this->putSlot($this->slots[1]);
 		$this->putSlot($this->slots[2]);
 		$this->putSlot($this->slots[3]);
+	}
+
+	/**
+	 * @return PacketName|string
+     */
+	public function getName(){
+		return "MobArmorEquipmentPacket";
 	}
 
 }
