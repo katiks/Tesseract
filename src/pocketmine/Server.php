@@ -1604,7 +1604,7 @@ class Server{
 §6│§b     |_|\___||___/___/\___|_|  \__,_|\___|\__|   §6│    §cAuthentication: §d$mode
 §6│                                                 │  §6------------------------------------------
 §6│                                                 │    §cAPI Version: §d$api
-§6│   §aSupport: §bgithub.com/TesseractMC/Tesseract   §6│§cLanguage: §d$lang
+§6│   §aSupport: §bgithub.com/TesseractMC/Tesseract     §6│§cLanguage: §d$lang
 §6│					          │    §cPackage: §d$package
 §6└─────────────────────────────────────────────────┘  §6------------------------------------------");
 
