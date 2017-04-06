@@ -11,12 +11,7 @@ Tesseract supports packet and event debug system (for plugin developers)**
 Report any issues and we will try to fix them for you.** 
 
 ##Builds
-
-__Travis-CI Build:__<br>
- [![Travis-CI](https://travis-ci.org/TesseractTeam/Tesseract.svg?branch=master)](https://travis-ci.org/TesseractTeam/Tesseract)<br>
- __Jenkins Build:__<br>
-[![Jenkins](https://travis-ci.org/TesseractTeam/Tesseract.svg?branch=master)](http://jenkins.tesseractteam.tk:8080/job/Tesseract)
-
+Unavailable due to original project discontinuation
 ## Project List
 You can check the progress of the project.
 __[Project List!](https://github.com/TesseractTeam/Tesseract/projects/1)__
