@@ -1,5 +1,4 @@
 <?php
-
 /*
  *
  *  ____            _        _   __  __ _                  __  __ ____
@@ -18,19 +17,15 @@
  *
  *
 */
-
 namespace pocketmine\event;
-
 use pocketmine\level\Level;
-
 class LevelTimings{
-
-    /** @var TimingsHandler */
-    public $setBlock;
-    /** @var TimingsHandler */
-    public $doBlockLightUpdates;
-    /** @var TimingsHandler */
-    public $doBlockSkyLightUpdates;
+	/** @var TimingsHandler */
+	public $setBlock;
+	/** @var TimingsHandler */
+	public $doBlockLightUpdates;
+	/** @var TimingsHandler */
+	public $doBlockSkyLightUpdates;
 	/** @var TimingsHandler */
 	public $mobSpawn;
 	/** @var TimingsHandler */
@@ -61,12 +56,10 @@ class LevelTimings{
 	public $doTick;
 	/** @var TimingsHandler */
 	public $tickEntities;
-
 	/** @var TimingsHandler */
 	public $syncChunkSendTimer;
 	/** @var TimingsHandler */
 	public $syncChunkSendPrepareTimer;
-
 	/** @var TimingsHandler */
 	public $syncChunkLoadTimer;
 	/** @var TimingsHandler */
@@ -81,14 +74,11 @@ class LevelTimings{
 	public $syncChunkLoadTileTicksTimer;
 	/** @var TimingsHandler */
 	public $syncChunkLoadPostTimer;
-
 	public function __construct(Level $level){
 		$name = $level->getFolderName() . " - ";
-
-        $this->setBlock = new TimingsHandler("** " . $name . "setBlock");
-        $this->doBlockLightUpdates = new TimingsHandler("** " . $name . "doBlockLightUpdates");
-        $this->doBlockSkyLightUpdates = new TimingsHandler("** " . $name . "doBlockSkyLightUpdates");
-
+		$this->setBlock = new TimingsHandler("** " . $name . "setBlock");
+		$this->doBlockLightUpdates = new TimingsHandler("** " . $name . "doBlockLightUpdates");
+		$this->doBlockSkyLightUpdates = new TimingsHandler("** " . $name . "doBlockSkyLightUpdates");
 		$this->mobSpawn = new TimingsHandler("** " . $name . "mobSpawn");
 		$this->doChunkUnload = new TimingsHandler("** " . $name . "doChunkUnload");
 		$this->doTickPending = new TimingsHandler("** " . $name . "doTickPending");
@@ -101,10 +91,8 @@ class LevelTimings{
 		$this->entityTick = new TimingsHandler("** " . $name . "entityTick");
 		$this->tileEntityTick = new TimingsHandler("** " . $name . "tileEntityTick");
 		$this->tileEntityPending = new TimingsHandler("** " . $name . "tileEntityPending");
-
 		$this->syncChunkSendTimer = new TimingsHandler("** " . $name . "syncChunkSend");
 		$this->syncChunkSendPrepareTimer = new TimingsHandler("** " . $name . "syncChunkSendPrepare");
-
 		$this->syncChunkLoadTimer = new TimingsHandler("** " . $name . "syncChunkLoad");
 		$this->syncChunkLoadDataTimer = new TimingsHandler("** " . $name . "syncChunkLoad - Data");
 		$this->syncChunkLoadStructuresTimer = new TimingsHandler("** " . $name . "syncChunkLoad - Structures");
@@ -112,10 +100,8 @@ class LevelTimings{
 		$this->syncChunkLoadTileEntitiesTimer = new TimingsHandler("** " . $name . "syncChunkLoad - TileEntities");
 		$this->syncChunkLoadTileTicksTimer = new TimingsHandler("** " . $name . "syncChunkLoad - TileTicks");
 		$this->syncChunkLoadPostTimer = new TimingsHandler("** " . $name . "syncChunkLoad - Post");
-
 		$this->tracker = new TimingsHandler($name . "tracker");
 		$this->doTick = new TimingsHandler($name . "doTick");
 		$this->tickEntities = new TimingsHandler($name . "tickEntities");
 	}
-
 }

@@ -1600,11 +1600,11 @@ class Server{
 §6│§b  |__   __|                              | |     §6│    §cMCPE: §d$mcpe §cProtocol: §d$protocol
 §6│§b     | | ___  ___ ___  ___ _ __ __ _  ___| |_    §6│    §cIP: §d$ip §cPort: §d$port
 §6│§b     | |/ _ \/ __/ __|/ _ \ '__/ _` |/ __| __|   §6│    §cQuery: §d$query
-§6│§b     | |  __/\__ \__ \  __/ | | (_| | (__| |_    §6│    §cSSL Extension: §d$ssl
+§6│§b     | |  __/\__ \__ \  __/ | | (_| | (__| |_    §6│    §cWebsite: tesseractmc.ml
 §6│§b     |_|\___||___/___/\___|_|  \__,_|\___|\__|   §6│    §cAuthentication: §d$mode
 §6│                                                 │  §6------------------------------------------
 §6│                                                 │    §cAPI Version: §d$api
-§6│   §aSupport: §bgithub.com/TesseractTeam/Tesseract   §6│    §cLanguage: §d$lang
+§6│   §aSupport: §bgithub.com/TesseractMC/Tesseract     §6│§cLanguage: §d$lang
 §6│					          │    §cPackage: §d$package
 §6└─────────────────────────────────────────────────┘  §6------------------------------------------");
 

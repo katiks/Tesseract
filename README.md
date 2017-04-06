@@ -6,7 +6,8 @@ Tesseract supports only the world type of Anvil or PMAnvil. (MCRegion support is
 Tesseract supports packet and event debug system (for plugin developers)**
 
 ## Notice
-**Tesseract is supported to Minecraft:PE 1.0.5 (PE & Win10) <br>
+**We are working on updates to Minecraft:PE 1.0.5 & 1.1.0 (PE & Win10)<br>
+This is still in work.<br>
 Report any issues and we will try to fix them for you.** 
 
 ## Builds
@@ -80,5 +81,5 @@ __[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/RE
 * __[Source RCON Protocol](https://developer.valvesoftware.com/wiki/Source_RCON_Protocol)__
 * __[UT3 Query Protocol](http://wiki.unrealadmin.org/UT3_query_protocol)__
 
-__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
+
 <br>
