@@ -72,7 +72,7 @@ namespace pocketmine {
 	use pocketmine\utils\Utils;
 	use pocketmine\wizard\Installer;
 
-	const VERSION = "2.0";
+	const VERSION = "2.0.0";
 	const API_VERSION = "4.0.0";
 	const CODENAME = "Kusnah";
 
