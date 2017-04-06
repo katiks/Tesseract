@@ -72,9 +72,9 @@ namespace pocketmine {
 	use pocketmine\utils\Utils;
 	use pocketmine\wizard\Installer;
 
-	const VERSION = "1.2.0";
-	const API_VERSION = "3.0.0-ALPHA5";
-	const CODENAME = "REBORN";
+	const VERSION = "2.0";
+	const API_VERSION = "4.0.0";
+	const CODENAME = "Kusnah";
 
 	/*
 	 * Startup code. Do not look at it, it may harm you.
