@@ -32,8 +32,8 @@ interface Info{
 	 */
 	
 	const CURRENT_PROTOCOL = 105;
-	const ACCEPTED_PROTOCOLS = [105];
-	const MINECRAFT_VERSION = "v1.0.5";
+	const ACCEPTED_PROTOCOLS = [104,105,106,107];
+	const MINECRAFT_VERSION = "v1.0.0";
 	const MINECRAFT_VERSION_NETWORK = "1.0.5";
 
 	const LOGIN_PACKET = 0x01;
