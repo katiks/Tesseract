@@ -17,7 +17,9 @@ Click [here](https://circleci.com/api/v1.1/project/github/TesseractMC/Tesseract/
 
 ## Chat
 [Discord Chat](https://discord.gg/xwGVcJ9)
+
 [IRC Chat](http://webchat.freenode.net/?channels=tesseractmc)
+
 [Gitter](https://gitter.im/TesseractMCPE/general)
 
 
@@ -46,8 +48,6 @@ __[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/RE
 - Tesseract is a "spoon" of **[Genisys](https://github.com/iTXTech/Genisys)** 
 - Tesseract is also a "spoon" of **[Pocketmine-MP](http://github.com/pmmp/PocketMine-MP/)** 
 - Most of the original code was written by PocketMine Team and iTX Technologies. <br>
-
-__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__<br>
 
 ## License
 -------------
