@@ -26,7 +26,7 @@
 namespace pocketmine\network\protocol;
 
 
-interface Info{
+interface ProtocolInfo{
 
 	/**
 	 * Actual Minecraft: PE protocol version
