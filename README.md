@@ -1,6 +1,5 @@
 ![Tesseract](http://i.imgur.com/1ga0ATy.jpg)
 
-[![CircleCI](https://circleci.com/gh/TesseractMC/Tesseract.svg?style=svg&circle-token=9204d52685cc59b1f611559d6da1c5e0a1a93041)](https://circleci.com/gh/TesseractMC/Tesseract)
 -------------
 **Tesseract is the advanced server software based on PocketMine-MP and Genisys! <br>
 Tesseract supports only the world type of Anvil or PMAnvil. (MCRegion support is [deprecated](https://www.google.com/search?q=deprecated&oq=deprecated&aqs=chrome.0.69i59j69i61.1457j0j7&sourceid=chrome&ie=UTF-8)) <br>
@@ -11,7 +10,8 @@ Tesseract supports packet and event debug system (for plugin developers)**
 Report any issues and we will try to fix them for you.** 
 
 ## Builds
-![Build Status](https://circleci.com/gh/circleci/mongofinil.svg?&style=badge&circle-token=d2743a622dc0d1a48ea56ff0e38b047d25278a6b/)
+[![CircleCI](https://circleci.com/gh/TesseractMC/Tesseract.svg?style=svg&circle-token=9204d52685cc59b1f611559d6da1c5e0a1a93041)](https://circleci.com/gh/TesseractMC/Tesseract)
+
 ## Quick Links (Instead of scrolling, click these!)
 
 __[Installation](https://github.com/TesseractMC/Tesseract)__ <br>
