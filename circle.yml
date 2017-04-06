@@ -11,5 +11,4 @@ test:
     - tar -xf PHP7.tar.gz
     - wget -O plugins/DevTools.phar https://github.com/PocketMine/DevTools/releases/download/v1.11.0/DevTools_v1.11.0.phar
     - bin/php7/bin/php ci.php
-	- mv /plugins/DevTools/Tesseract*.phar /plugins/DevTools/Tesseract.phar
     - cp -R plugins/DevTools/* $CIRCLE_ARTIFACTS
