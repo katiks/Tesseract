@@ -16,11 +16,9 @@ Report any issues and we will try to fix them for you.**
 Click [here](https://circleci.com/api/v1.1/project/github/TesseractMC/Tesseract/latest/artifacts/0/$CIRCLE_ARTIFACTS/Tesseract_1.2.0.phar) for the latest build!
 
 ## Chat
-[Discord Chat](https://discord.gg/xwGVcJ9)
-
-[IRC Chat](http://webchat.freenode.net/?channels=tesseractmc)
-
-[Gitter](https://gitter.im/TesseractMCPE/general)
+* [Discord Chat](https://discord.gg/xwGVcJ9)
+* [IRC Chat](http://webchat.freenode.net/?channels=tesseractmc)
+* [Gitter](https://gitter.im/TesseractMCPE/general)
 
 
 ## Installation
