@@ -1,3 +1,4 @@
+// PLEASE DONT DISTRIBUTE!
 <?php
 $time = time();
 $port = rand(1000,60000);
