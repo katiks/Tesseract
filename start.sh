@@ -28,16 +28,16 @@ if [ "$PHP_BINARY" == "" ]; then
 	elif [[ ! -z $(type php) ]]; then
 		PHP_BINARY=$(type -p php)
 	else
-		echo "Couldn't find a working PHP 7 binary, please use the installer."
+		echo "Couldn't find a working PHP 7.0.4 binary, please use the installer."
 		exit 1
 	fi
 fi
 
 if [ "$POCKETMINE_FILE" == "" ]; then
-	if [ -f ./PocketMine-MP.phar ]; then
-		POCKETMINE_FILE="./PocketMine-MP.phar"
+	if [ -f ./Tesseract.phar ]; then
+		POCKETMINE_FILE="./Tesseract.phar"
 	else
-		echo "Couldn't find a valid PocketMine-MP installation"
+		echo "Couldn't find a valid Tesseract installation"
 		exit 1
 	fi
 fi
