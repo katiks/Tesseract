@@ -27,17 +27,12 @@ Click [here](https://circleci.com/api/v1.1/project/github/TesseractMC/Tesseract/
 Supported platforms: Linux, Windows, OS X, Raspberry Pi, and ODROID <br>
 [Installation](https://github.com/TesseractMC/Tesseract/wiki/Installation)<br>
 
-__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
-<br>
-
 ## Resources
 
 **External Links**<br>
 Your Tesseract Server needs Visual Studio C++ Redistributable 2015 (If you are on windows). <br>
 It can be downloaded
-__[here](https://www.microsoft.com/en-us/download/details.aspx?id=48145)__ <br>
-
-__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
+__[here](https://www.microsoft.com/en-us/download/details.aspx?id=48145)__
 <br>
 
 
@@ -62,9 +57,6 @@ __[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/RE
 
 	You should have received a copy of the GNU Lesser General Public License
 	along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-__[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
-<br>
 
 ## Third-party Libraries/Protocols Used
 -------------
