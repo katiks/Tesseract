@@ -25,7 +25,6 @@ namespace pocketmine\network\protocol;
 
 
 class RemoveEntityPacket extends DataPacket{
-
 	const NETWORK_ID = Info::REMOVE_ENTITY_PACKET;
 
 	public $eid;
@@ -36,14 +35,7 @@ class RemoveEntityPacket extends DataPacket{
 
 	public function encode(){
 		$this->reset();
-		$this->putEntityId($this->eid);
-	}
-
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "RemoveEntityPacket";
+		$this->putVarInt($this->eid);
 	}
 
 }

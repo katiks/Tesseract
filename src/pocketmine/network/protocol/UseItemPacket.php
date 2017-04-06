@@ -25,13 +25,11 @@ namespace pocketmine\network\protocol;
 
 
 class UseItemPacket extends DataPacket{
-
 	const NETWORK_ID = Info::USE_ITEM_PACKET;
 
 	public $x;
 	public $y;
 	public $z;
-	public $blockId;
 	public $face;
 	public $item;
 	public $fx;
@@ -40,27 +38,26 @@ class UseItemPacket extends DataPacket{
 	public $posX;
 	public $posY;
 	public $posZ;
-	public $slot;
+	public $hotbarSlot;
+	public $interactBlockId;
 
 	public function decode(){
-		$this->getBlockCoords($this->x, $this->y, $this->z);
-		$this->blockId = $this->getUnsignedVarInt();
-		$this->face = $this->getVarInt();
-		$this->getVector3f($this->fx, $this->fy, $this->fz);
-		$this->getVector3f($this->posX, $this->posY, $this->posZ);
-		$this->slot = $this->getVarInt();
+		$this->x = $this->getSignedVarInt();
+		$this->y = $this->getVarInt();
+		$this->z = $this->getSignedVarInt();
+		$this->interactBlockId =  $this->getVarInt();
+		$this->face = $this->getSignedVarInt();
+		$this->fx = $this->getLFloat();
+		$this->fy = $this->getLFloat();
+		$this->fz = $this->getLFloat();
+		$this->posX = $this->getLFloat();
+		$this->posY = $this->getLFloat();
+		$this->posZ = $this->getLFloat();
+		$this->hotbarSlot = $this->getSignedVarInt();
 		$this->item = $this->getSlot();
 	}
 
 	public function encode(){
 
 	}
-
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "UseItemPacket";
-	}
-
 }

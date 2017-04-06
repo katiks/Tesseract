@@ -25,7 +25,6 @@ namespace pocketmine\network\protocol;
 
 
 class UpdateBlockPacket extends DataPacket{
-
 	const NETWORK_ID = Info::UPDATE_BLOCK_PACKET;
 
 	const FLAG_NONE      = 0b0000;
@@ -37,29 +36,25 @@ class UpdateBlockPacket extends DataPacket{
 	const FLAG_ALL = (self::FLAG_NEIGHBORS | self::FLAG_NETWORK);
 	const FLAG_ALL_PRIORITY = (self::FLAG_ALL | self::FLAG_PRIORITY);
 
-	public $x;
-	public $z;
-	public $y;
-	public $blockId;
-	public $blockData;
-	public $flags;
-
+	public $records = []; //x, z, y, blockId, blockData, flags
+	
+	public function __construct() {
+		parent::__construct("", 0);
+	}
+	
 	public function decode(){
 
 	}
 
 	public function encode(){
 		$this->reset();
-		$this->putBlockCoords($this->x, $this->y, $this->z);
-		$this->putUnsignedVarInt($this->blockId);
-		$this->putUnsignedVarInt(($this->flags << 4) | $this->blockData);
-	}
-
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "UpdateBlockPacket";
+		foreach($this->records as $r){
+			$this->putSignedVarInt($r[0]);			
+			$this->putVarInt($r[2]);
+			$this->putSignedVarInt($r[1]);
+			$this->putVarInt($r[3]);
+			$this->putVarInt(($r[5] << 4) | $r[4]);
+		}
 	}
 
 }

@@ -25,31 +25,19 @@ namespace pocketmine\network\protocol;
 
 
 class StartGamePacket extends DataPacket{
-
 	const NETWORK_ID = Info::START_GAME_PACKET;
 
-	public $entityUniqueId;
-	public $entityRuntimeId;
-	public $x;
-	public $y;
-	public $z;
 	public $seed;
 	public $dimension;
-	public $generator = 1; //default infinite - 0 old, 1 infinite, 2 flat
+	public $generator = 1;
 	public $gamemode;
-	public $difficulty;
+	public $eid;
 	public $spawnX;
 	public $spawnY;
 	public $spawnZ;
-	public $hasAchievementsDisabled = 1;
-	public $dayCycleStopTime = -1; //-1 = not stopped, any positive value = stopped at that time
-	public $eduMode = 0;
-	public $rainLevel;
-	public $lightningLevel;
-	public $commandsEnabled;
-	public $isTexturePacksRequired = 0;
-	public $unknown;
-	public $worldName;
+	public $x;
+	public $y;
+	public $z;
 
 	public function decode(){
 
@@ -57,33 +45,47 @@ class StartGamePacket extends DataPacket{
 
 	public function encode(){
 		$this->reset();
-		$this->putEntityId($this->entityUniqueId); //EntityUniqueID
-		$this->putEntityId($this->entityRuntimeId); //EntityRuntimeID
-		$this->putVector3f($this->x, $this->y, $this->z);
-		$this->putLFloat(0); //TODO: find out what these are (yaw/pitch?)
+		$this->putVarInt(0); //EntityUniqueID
+		$this->putVarInt($this->eid); //EntityUniqueID
+		
+		$this->putLFloat($this->x); // default position (4)
+		$this->putLFloat($this->y); // (4)
+		$this->putLFloat($this->z); // (4)
+		
 		$this->putLFloat(0);
-		$this->putVarInt($this->seed);
-		$this->putVarInt($this->dimension);
-		$this->putVarInt($this->generator);
-		$this->putVarInt($this->gamemode);
-		$this->putVarInt($this->difficulty);
-		$this->putBlockCoords($this->spawnX, $this->spawnY, $this->spawnZ);
-		$this->putBool($this->hasAchievementsDisabled);
-		$this->putVarInt($this->dayCycleStopTime);
-		$this->putBool($this->eduMode);
-		$this->putLFloat($this->rainLevel);
-		$this->putLFloat($this->lightningLevel);
-		$this->putBool($this->commandsEnabled);
-		$this->putBool($this->isTexturePacksRequired);
-		$this->putString($this->unknown);
-		$this->putString($this->worldName);
-	}
+		$this->putLFloat(0);
+		
+		// Level settings
+		
+		$this->putSignedVarInt($this->seed);
+		
+		$this->putSignedVarInt($this->dimension);
+		
+		$this->putSignedVarInt($this->generator);
+		
+		$this->putSignedVarInt($this->gamemode);
+		
+		$this->putSignedVarInt(0); // Difficulty
+		
+		// default spawn 3x VarInt
+		$this->putSignedVarInt($this->spawnX);
+		$this->putSignedVarInt($this->spawnY);
+		$this->putSignedVarInt($this->spawnZ);
+		
+		$this->putByte(1); // hasAchievementsDisabled
+		
+		$this->putSignedVarInt(0); // DayCycleStopTyme 1x VarInt
+		
+		$this->putByte(0); //edu mode
 
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "StartGamePacket";
+		$this->putLFloat(0); //rain level
+
+		$this->putLFloat(0); //lightning level
+		
+		$this->putByte(1);	//commands enabled
+		
+		$this->putByte(0); // isTexturepacksRequired 1x Byte
+//		$this->putString('iX8AANxLbgA=');
 	}
 
 }

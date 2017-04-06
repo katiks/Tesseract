@@ -25,7 +25,6 @@ namespace pocketmine\network\protocol;
 
 
 class CraftingEventPacket extends DataPacket{
-
 	const NETWORK_ID = Info::CRAFTING_EVENT_PACKET;
 
 	public $windowId;
@@ -42,15 +41,15 @@ class CraftingEventPacket extends DataPacket{
 
 	public function decode(){
 		$this->windowId = $this->getByte();
-		$this->type = $this->getVarInt();
+		$this->type = $this->getSignedVarInt();
 		$this->id = $this->getUUID();
 
-		$size = $this->getUnsignedVarInt();
+		$size = $this->getVarInt();
 		for($i = 0; $i < $size and $i < 128; ++$i){
 			$this->input[] = $this->getSlot();
 		}
 
-		$size = $this->getUnsignedVarInt();
+		$size = $this->getVarInt();
 		for($i = 0; $i < $size and $i < 128; ++$i){
 			$this->output[] = $this->getSlot();
 		}
@@ -58,13 +57,6 @@ class CraftingEventPacket extends DataPacket{
 
 	public function encode(){
 
-	}
-
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "CraftingEventPacket";
 	}
 
 }

@@ -1,4 +1,5 @@
 <?php
+
 /*
  *
  *  ____            _        _   __  __ _                  __  __ ____  
@@ -17,21 +18,30 @@
  * 
  *
 */
+
 namespace pocketmine\network\protocol;
 
 #include <rules/DataPacket.h>
 
+
 use pocketmine\entity\Attribute;
 
-
 class UpdateAttributesPacket extends DataPacket{
-
 	const NETWORK_ID = Info::UPDATE_ATTRIBUTES_PACKET;
 
-	public $entityId;
+    const HEALTH = "minecraft:health";
+    const HUNGER = "minecraft:player.hunger";
+    const EXPERIENCE = "minecraft:player.experience";
+    const EXPERIENCE_LEVEL = "minecraft:player.level";
+	const SPEED = "minecraft:movement";
 
-	/** @var Attribute[] */
-	public $entries = [];
+    public $entityId;
+
+    public $minValue;
+    public $maxValue;
+    public $value;
+    public $name;
+	public $defaultValue;
 
 	public function decode(){
 
@@ -39,22 +49,12 @@ class UpdateAttributesPacket extends DataPacket{
 
 	public function encode(){
 		$this->reset();
-		$this->putEntityId($this->entityId);
-		$this->putUnsignedVarInt(count($this->entries));
-		foreach($this->entries as $entry){
-			$this->putLFloat($entry->getMinValue());
-			$this->putLFloat($entry->getMaxValue());
-			$this->putLFloat($entry->getValue());
-			$this->putLFloat($entry->getDefaultValue());
-			$this->putString($entry->getName());
-		}
+		$this->putVarInt($this->entityId);
+		$this->putVarInt(1);
+        $this->putLFloat($this->minValue);
+        $this->putLFloat($this->maxValue);
+        $this->putLFloat($this->value);
+		$this->putLFloat($this->defaultValue);
+		$this->putString($this->name);
 	}
-
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "UpdateAttributesPacket";
-	}
-
 }

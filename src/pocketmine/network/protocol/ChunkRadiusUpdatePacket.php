@@ -24,22 +24,17 @@ namespace pocketmine\network\protocol;
 #include <rules/DataPacket.h>
 
 
-class DisconnectPacket extends DataPacket {
-	
-	const NETWORK_ID = Info::DISCONNECT_PACKET;
+class ChunkRadiusUpdatePacket extends DataPacket{
+	const NETWORK_ID = Info::CHUNK_RADIUS_UPDATE_PACKET;
 
-	public $hideDisconnectReason = false;
-	public $message;
+	public $radius;
 
-	public function decode() {
-		$this->hideDisconnectReason = $this->getByte();
-		$this->message = $this->getString();
+	public function decode(){
 	}
 
-	public function encode() {
+	public function encode(){
 		$this->reset();
-		$this->putByte($this->hideDisconnectReason);
-		$this->putString($this->message);
+		$this->putVarInt($this->radius);
 	}
 
 }

@@ -22,16 +22,16 @@
 namespace pocketmine\network\protocol;
 
 #include <rules/DataPacket.h>
+use pocketmine\utils\TextFormat;
 
 
 class PlayerListPacket extends DataPacket{
-
 	const NETWORK_ID = Info::PLAYER_LIST_PACKET;
 
 	const TYPE_ADD = 0;
 	const TYPE_REMOVE = 1;
 
-	//REMOVE: UUID, ADD: UUID, entity id, name, skinId, skin
+	//REMOVE: UUID, ADD: UUID, entity id, name, skinName, skin
 	/** @var array[] */
 	public $entries = [];
 	public $type;
@@ -48,25 +48,18 @@ class PlayerListPacket extends DataPacket{
 	public function encode(){
 		$this->reset();
 		$this->putByte($this->type);
-		$this->putUnsignedVarInt(count($this->entries));
+		$this->putVarInt(count($this->entries));
 		foreach($this->entries as $d){
 			if($this->type === self::TYPE_ADD){
 				$this->putUUID($d[0]);
-				$this->putEntityId($d[1]);
-				$this->putString($d[2]);
+				$this->putVarInt($d[1]);
+				$this->putString($d[2]);				
 				$this->putString($d[3]);
 				$this->putString($d[4]);
 			}else{
 				$this->putUUID($d[0]);
 			}
 		}
-	}
-
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "PlayerListPacket";
 	}
 
 }

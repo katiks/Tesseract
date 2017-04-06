@@ -21,29 +21,18 @@
 
 namespace pocketmine\network\protocol;
 
-#include <rules/DataPacket.h>
 
-
-class SetHealthPacket extends DataPacket{
-
-	const NETWORK_ID = Info::SET_HEALTH_PACKET;
-
-	public $health;
+class SetHealthPacket extends DataPacket{	
+	const NETWORK_ID =  Info::SET_HEALTH_PACKET;
+	
+    public $value;
 
 	public function decode(){
-		$this->health = $this->getVarInt();
+
 	}
 
 	public function encode(){
 		$this->reset();
-		$this->putVarInt($this->health);
+		$this->putSignedVarInt($this->value);
 	}
-
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "SetHealthPacket";
-	}
-
 }

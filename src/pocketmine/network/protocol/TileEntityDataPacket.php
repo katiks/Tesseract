@@ -24,22 +24,27 @@ namespace pocketmine\network\protocol;
 #include <rules/DataPacket.h>
 
 
-class DisconnectPacket extends DataPacket {
-	
-	const NETWORK_ID = Info::DISCONNECT_PACKET;
+class TileEntityDataPacket extends DataPacket{
+	const NETWORK_ID = Info::TILE_ENTITY_DATA_PACKET;
 
-	public $hideDisconnectReason = false;
-	public $message;
+	public $x;
+	public $y;
+	public $z;
+	public $namedtag;
 
-	public function decode() {
-		$this->hideDisconnectReason = $this->getByte();
-		$this->message = $this->getString();
+	public function decode(){
+		$this->x = $this->getSignedVarInt();
+		$this->y = $this->getByte();
+		$this->z = $this->getSignedVarInt();
+		$this->namedtag = $this->get(true);
 	}
 
-	public function encode() {
+	public function encode(){
 		$this->reset();
-		$this->putByte($this->hideDisconnectReason);
-		$this->putString($this->message);
+		$this->putSignedVarInt($this->x);
+		$this->putByte($this->y);
+		$this->putSignedVarInt($this->z);
+		$this->put($this->namedtag);
 	}
 
 }

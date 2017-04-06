@@ -25,7 +25,6 @@ namespace pocketmine\network\protocol;
 
 
 class AnimatePacket extends DataPacket{
-
 	const NETWORK_ID = Info::ANIMATE_PACKET;
 
 	public $action;
@@ -33,20 +32,13 @@ class AnimatePacket extends DataPacket{
 
 	public function decode(){
 		$this->action = $this->getVarInt();
-		$this->eid = $this->getEntityId();
+		$this->eid = $this->getVarInt();
 	}
 
 	public function encode(){
 		$this->reset();
 		$this->putVarInt($this->action);
-		$this->putEntityId($this->eid);
-	}
-
-	/**
-	 * @return PacketName|string
-     */
-	public function getName(){
-		return "AnimatePacket";
+		$this->putVarInt($this->eid);
 	}
 
 }
