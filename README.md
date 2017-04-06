@@ -6,22 +6,15 @@ Tesseract supports only the world type of Anvil or PMAnvil. (MCRegion support is
 Tesseract supports packet and event debug system (for plugin developers)**
 
 ## Notice
-
 **Tesseract is supported to Minecraft:PE 1.0.5 (PE & Win10) <br>
 Report any issues and we will try to fix them for you.** 
 
-##Builds
-Unavailable due to original project discontinuation
-## Project List
-You can check the progress of the project.
-__[Project List!](https://github.com/TesseractTeam/Tesseract/projects/1)__
+## Builds
+Unavailable due to original project discontinuation. Coming Soon!
 
 ## Quick Links (Instead of scrolling, click these!)
 
-__[Installation](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#installation)__ <br>
-__[Resources](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#resources)__ <br>
-__[Acknowledgements](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#acknowledgements)__ <br>
-__[License](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#license)__ <br>
+__[Installation](https://github.com/TesseractMC/Tesseract)__ <br>
 __[TODO LIST!](https://github.com/TesseractTeam/Tesseract/projects/1)__ <br>
 __[Third Party Libraries and Protocols Used](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#ThirdpartyLibrariesProtocolsUsed)__ <br>
 
@@ -29,7 +22,7 @@ __[Third Party Libraries and Protocols Used](https://github.com/TesseractTeam/Te
 
 **Self-installation:**<br>
 Supported platforms: Linux, Windows, OS X, Raspberry Pi, and ODROID <br>
-[Installation](https://github.com/TesseractTeam/Tesseract/wiki/Installation)<br>
+[Installation](https://github.com/TesseractMC/Tesseract/wiki/Installation)<br>
 
 __[Back to QuickLinks](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#quick-links-instead-of-scrolling-click-these)__
 <br>
