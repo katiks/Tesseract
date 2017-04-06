@@ -14,11 +14,12 @@ Report any issues and we will try to fix them for you.**
 [![CircleCI](https://circleci.com/gh/TesseractMC/Tesseract.svg?style=svg&circle-token=9204d52685cc59b1f611559d6da1c5e0a1a93041)](https://circleci.com/gh/TesseractMC/Tesseract)
 
 Click [here](https://circleci.com/api/v1.1/project/github/TesseractMC/Tesseract/latest/artifacts/0/$CIRCLE_ARTIFACTS/Tesseract_1.2.0.phar) for the latest build!
-## Quick Links (Instead of scrolling, click these!)
 
-__[Installation](https://github.com/TesseractMC/Tesseract)__ <br>
-__[TODO LIST!](https://github.com/TesseractTeam/Tesseract/projects/1)__ <br>
-__[Third Party Libraries and Protocols Used](https://github.com/TesseractTeam/Tesseract/blob/master/README.md#ThirdpartyLibrariesProtocolsUsed)__ <br>
+## Chat
+[Discord Chat](https://discord.gg/xwGVcJ9)
+[IRC Chat](http://webchat.freenode.net/?channels=tesseractmc)
+[Gitter](https://gitter.im/TesseractMCPE/general)
+
 
 ## Installation
 
