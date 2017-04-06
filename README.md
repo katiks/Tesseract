@@ -11,7 +11,7 @@ This is still in work.<br>
 Report any issues and we will try to fix them for you.** 
 
 ## Builds
-[![CircleCI](https://circleci.com/gh/TesseractMC/Tesseract.svg?style=svg&circle-token=9204d52685cc59b1f611559d6da1c5e0a1a93041)](https://circleci.com/gh/TesseractMC/Tesseract)
+[![CircleCI](https://circleci.com/gh/TesseractMC/Tesseract.svg?style=sheild&circle-token=9204d52685cc59b1f611559d6da1c5e0a1a93041)](https://circleci.com/gh/TesseractMC/Tesseract)
 
 Click [here](https://circleci.com/api/v1.1/project/github/TesseractMC/Tesseract/latest/artifacts/0/$CIRCLE_ARTIFACTS/Tesseract_1.2.0.phar) for the latest build!
 ## Quick Links (Instead of scrolling, click these!)
